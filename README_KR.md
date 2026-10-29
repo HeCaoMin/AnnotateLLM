@@ -4,33 +4,26 @@
 
 <p align="center"><img src="https://img.shields.io/badge/version-0.0.1-26654e" alt="v0.0.1"> <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT"></a> <img src="https://img.shields.io/badge/Manifest-V3-6750a4" alt="Manifest V3"> <img src="https://img.shields.io/badge/data-local-43834a" alt="Local storage"></p>
 
-# 대화 옆에 나의 생각을 남기세요.
+# AnnotateLLM
+#### 대화 옆에 나의 생각을 남기세요.
 
 **AnnotateLLM**은 ChatGPT 웹 대화에 하이라이트, Markdown 주석, 독립적인 대화 노트를 추가합니다. 선택한 문장과 생각을 현재 브라우저에 저장하고 다시 읽거나 Markdown으로 내보낼 수 있습니다. 현재 버전은 모델 호출, 클라우드 동기화 또는 유료 호스팅을 제공하지 않습니다.
 
+[설치](#설치) · [기능](#주요-기능) · [데이터 형식](docs/FORMAT.md) · [문제 신고](https://github.com/HeCaoMin/AnnotateLLM/issues)
+
 ## 주요 기능
+
+<p align="center"><img src="docs/assets/workflow.svg" alt="선택, 주석 작성, 다시 보기, 내보내기" width="100%"></p>
 
 | 읽기 | 생각 정리 | 다시 보기 |
 | :--- | :--- | :--- |
-| 🟡 네 가지 하이라이트 색상 | ✍️ 실시간 Markdown 편집 | 🗂️ 로컬 보관함, 검색 및 필터 |
-| 📍 문맥과 메시지 지문으로 위치 확인 | 📌 이동 가능한 주석과 고정 미리보기 | 📄 전체 또는 대화별 내보내기 |
-| 🌗 밝은/어두운 테마와 좁은 화면 | 📝 이동 및 크기 조절이 가능한 메모 | 🛟 가져오기 미리보기, 충돌 처리, 복구 스냅샷 |
+| 🟡 네 가지 하이라이트 색상 | ✍️ 실시간 Markdown 렌더링 및 편집 | 🗂️ 독립 보관함, 검색 및 필터 |
+| 📍 발췌문, 문맥 및 메시지 지문으로 위치 확인 | 📌 이동 가능한 주석과 고정 미리보기 | 📄 전체 또는 대화별 내보내기 |
+| 🌗 밝은/어두운 테마와 좁은 화면 | 📝 이동 및 크기 조절이 가능한 대화 메모 | 🛟 가져오기 미리보기, 충돌 처리 및 복구 스냅샷 |
 
 팝업에서 **中文 / English / 한국어**를 선택할 수 있습니다. 사용자 노트와 발췌문은 번역하지 않습니다.
 
-<img src="docs/assets/workflow.svg" alt="선택, 주석 작성, 다시 보기, 내보내기" width="100%">
-
-## 화면 미리보기
-
-아래 이미지는 격리된 브라우저의 합성 페이지와 가상 대화를 사용하며 실제 계정 화면이 아닙니다.
-
-![하이라이트와 주석](docs/assets/annotations.png)
-
-<details><summary>로컬 노트 보관함 보기</summary>
-
-![로컬 노트 보관함](docs/assets/library.png)
-
-</details>
+<p align="center"><img src="docs/assets/language-menu.png" alt="인터페이스 언어 선택" width="360"></p>
 
 ## 설치
 
@@ -41,6 +34,28 @@
 5. ChatGPT를 새로고침하고 고정 URL이 있는 저장된 대화에서 메시지 텍스트를 선택합니다.
 
 업데이트 전에 백업을 내보내세요. 원래 로드한 폴더의 파일을 교체하고 확장 프로그램과 ChatGPT를 새로고침하세요. 삭제 후 재설치하면 로컬 데이터가 지워집니다.
+
+## 사용 안내
+
+다음 스크린샷은 실제 페이지를 보여 줍니다. 일부에 표시된 버전 번호는 이전 버전이며 사용 방법 참고용입니다.
+
+1. 설치 후 브라우저 도구 모음의 확장 프로그램을 클릭하고 “동의하고 로컬 주석 사용”을 선택합니다.
+
+<p align="center"><img src="docs/assets/enable-annotations.png" alt="로컬 주석 활성화" width="340"></p>
+
+2. ChatGPT 대화에서 텍스트를 선택하여 하이라이트 또는 주석을 추가합니다.
+
+<p align="center"><img src="docs/assets/highlight-selection.png" alt="텍스트 선택 및 주석 작성" width="850"></p>
+
+3. 페이지의 떠 있는 버튼을 클릭하여 현재 대화의 하이라이트와 주석을 분류해 볼 수 있습니다. “대화 노트”에서 실시간으로 렌더링되는 Markdown 노트를 작성할 수도 있습니다.
+
+<p align="center"><img src="docs/assets/conversation-panel.png" alt="대화 주석 패널" width="850"></p>
+
+<details><summary>노트 보관함 보기</summary>
+
+<p align="center"><img src="docs/assets/library.png" alt="로컬 노트 보관함" width="850"></p>
+
+</details>
 
 ## 개인정보 및 제한
 
@@ -75,6 +90,15 @@ Windows 패키징: `pwsh -File scripts/package.ps1`. 결과는 dist에 생성됩
 | editor/ | ProseMirror Markdown 편집기 |
 | tests/, scripts/ | 합성 테스트, 검사, 빌드 및 패키징 |
 | docs/ | 데이터 형식, 공개 규칙 및 이미지 |
+
+## 개발 계획
+
+- Gemini, DeepSeek, GLM, Kimi, Qwen 웹 버전 지원을 추가할 계획입니다.
+- WebDAV를 통한 하이라이트와 주석 저장 및 기기 간 동기화 기능을 추가할 계획입니다.
+
+## 후원하기
+
+<p align="center"><img src="docs/assets/wechat-support.jpg" alt="WeChat Pay 후원 QR 코드" width="280"></p>
 
 ## 기여 및 라이선스
 

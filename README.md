@@ -4,35 +4,30 @@
 
 <p align="center"><img src="https://img.shields.io/badge/version-0.0.1-26654e" alt="v0.0.1"> <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT"></a> <img src="https://img.shields.io/badge/Manifest-V3-6750a4" alt="Manifest V3"> <img src="https://img.shields.io/badge/data-local-43834a" alt="Local storage"></p>
 
-# 把思考留在对话里。
+# AnnotateLLM
+#### 把思考留在对话里。
 
-**AnnotateLLM** 为 ChatGPT 网页对话提供高亮、Markdown 批注和独立笔记。摘录与想法保存在当前浏览器，随时回看，也能导出为 Markdown。当前不调用模型，不提供云同步或付费托管。
+**AnnotateLLM** 为 ChatGPT 网页对话提供**文本高亮标记**、**实时渲染的 Markdown 格式批注**和**独立笔记**。摘录与想法保存在当前浏览器，随时回看，也能导出为 Markdown 进行保存和数据迁移。
 
 [开始安装](#安装) · [功能](#功能) · [数据格式](docs/FORMAT.md) · [反馈问题](https://github.com/HeCaoMin/AnnotateLLM/issues)
 
 ## 功能
 
-| 阅读时 | 思考时 | 回顾时 |
-| :--- | :--- | :--- |
-| 🟡 黄、绿、蓝、粉四色高亮 | ✍️ Markdown 实时编辑 | 🗂️ 独立笔记库与搜索筛选 |
-| 📍 摘录、上下文与消息指纹定位 | 📌 可拖动批注、固定预览 | 📄 全量或单对话导出 |
-| 🌗 深浅色与窄窗口适配 | 📝 可拖动、缩放的对话便利贴 | 🛟 导入预览、冲突处理与恢复快照 |
+<img src="docs/assets/workflow.svg" alt="选择文字 → 批注 → 回看 → 导出" width="100%">
+
+| 阅读时              | 思考时                | 回顾时               |
+| :--------------- | :----------------- | :---------------- |
+| 🟡 黄、绿、蓝、粉四色高亮   | ✍️ Markdown 实时渲染编辑 | 🗂️ 独立笔记库与搜索筛选    |
+| 📍 摘录、上下文与消息指纹定位 | 📌 可拖动批注、固定预览      | 📄 全量或单对话导出       |
+| 🌗 深浅色与窄窗口适配     | 📝 可拖动、缩放的对话便利贴    | 🛟 导入预览、冲突处理与恢复快照 |
 
 界面支持 **中文 / English / 한국어**。在插件弹窗右上角选择语言；用户笔记与原文摘录不会被翻译。
 
-<img src="docs/assets/workflow.svg" alt="选择文字 → 批注 → 回看 → 导出" width="100%">
 
-## 界面预览
+<p align="center"><img src="docs/assets/language-menu.png" alt="界面语言选择" width="360"></p>
 
-以下图片来自隔离浏览器中的合成演示页面，使用虚构对话，不代表真实账户截图。
 
-![页面批注与高亮](docs/assets/annotations.png)
 
-<details><summary>查看笔记库</summary>
-
-![本地笔记库](docs/assets/library.png)
-
-</details>
 
 ## 安装
 
@@ -43,6 +38,33 @@
 5. 刷新 ChatGPT，打开具有固定网址的已保存对话，选择消息文字即可开始。
 
 更新前先导出备份。覆盖原加载目录后重新加载扩展，并刷新 ChatGPT；不要卸载重装，以免清除本地笔记。
+
+## 使用指南
+
+以下截图来自实际页面，其中部分界面显示旧版本号，仅供操作参考。
+
+1. 安装插件后，在浏览器标签栏，点击“同意并启用本地批注”开始使用。
+
+<p align="center"><img src="docs/assets/enable-annotations.png" alt="启用本地批注" width="340"></p>
+
+
+
+2. 在chatGPT的对话页面中，用光标选中文本，进行高亮和批注。
+
+
+<p align="center"><img src="docs/assets/highlight-selection.png" alt="选择文字并批注" width="850"></p>
+
+
+3. 点击页面上的悬浮球，分类查看当前对话中的高亮与批注。亦可点击“对话笔记”功能，在本对话中进行实时渲染的Markdown格式笔记撰写。
+
+
+<p align="center"><img src="docs/assets/conversation-panel.png" alt="对话批注面板" width="850"></p>
+
+<details><summary>查看笔记库</summary>
+
+<p align="center"><img src="docs/assets/library.png" alt="本地笔记库" width="850"></p>
+
+</details>
 
 ## 隐私与使用范围
 
@@ -77,6 +99,15 @@ Windows 打包：`pwsh -File scripts/package.ps1`。输出位于 dist。浏览�
 | editor/ | ProseMirror Markdown 编辑器 |
 | tests/、scripts/ | 合成测试、检查、构建与打包 |
 | docs/ | 格式契约、发布规则与公开图片 |
+## 开发计划
+- 计划未来增加对Gemini，DeepSeek，GLM，Kimi，千问的网页端适配。
+- 计划未来增加使用WebDAV进行保存和跨设备同步高亮和批注信息的功能。
+
+## 欢迎打赏
+
+
+<p align="center"><img src="docs/assets/wechat-support.jpg" alt="微信赞赏收款码" width="280"></p>
+
 
 ## 参与与许可
 

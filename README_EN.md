@@ -4,33 +4,26 @@
 
 <p align="center"><img src="https://img.shields.io/badge/version-0.0.1-26654e" alt="v0.0.1"> <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT"></a> <img src="https://img.shields.io/badge/Manifest-V3-6750a4" alt="Manifest V3"> <img src="https://img.shields.io/badge/data-local-43834a" alt="Local storage"></p>
 
-# Keep your thinking beside the conversation.
+# AnnotateLLM
+#### Keep your thinking beside the conversation.
 
 **AnnotateLLM** brings highlights, Markdown annotations and conversation notes to ChatGPT on the web. Keep selected passages and ideas in your current browser, revisit them, and export Markdown backups. This version makes no model calls and offers no cloud sync or paid hosting.
 
+[Install](#install) · [Features](#features) · [Data format](docs/FORMAT.md) · [Report an issue](https://github.com/HeCaoMin/AnnotateLLM/issues)
+
 ## Features
+
+<p align="center"><img src="docs/assets/workflow.svg" alt="Select, annotate, revisit, export" width="100%"></p>
 
 | Read | Think | Revisit |
 | :--- | :--- | :--- |
-| 🟡 Four highlight colors | ✍️ Live Markdown editing | 🗂️ Local library, search and filters |
-| 📍 Context and message fingerprint anchoring | 📌 Draggable notes and pinned previews | 📄 Full-library or single-chat export |
-| 🌗 Light/dark and narrow layouts | 📝 Resizable conversation sticky notes | 🛟 Import preview, conflicts and recovery snapshot |
+| 🟡 Four highlight colors | ✍️ Live Markdown rendering and editing | 🗂️ Local library, search and filters |
+| 📍 Context and message fingerprint anchoring | 📌 Draggable annotations and pinned previews | 📄 Full-library or single-chat export |
+| 🌗 Light/dark and narrow layouts | 📝 Draggable, resizable conversation notes | 🛟 Import preview, conflict handling and recovery snapshot |
 
-Choose **中文 / English / 한국어** in the popup. Your notes and excerpts stay in their original language.
+Choose **中文 / English / 한국어** in the popup; your notes and excerpts stay in their original language.
 
-<img src="docs/assets/workflow.svg" alt="Select, annotate, revisit, export" width="100%">
-
-## Preview
-
-These screenshots use fictional conversations in an isolated browser fixture, not a real account.
-
-![Highlights and annotations](docs/assets/annotations.png)
-
-<details><summary>Open the local library preview</summary>
-
-![Local note library](docs/assets/library.png)
-
-</details>
+<p align="center"><img src="docs/assets/language-menu.png" alt="Interface language selection" width="360"></p>
 
 ## Install
 
@@ -41,6 +34,28 @@ These screenshots use fictional conversations in an isolated browser fixture, no
 5. Refresh ChatGPT, open a saved conversation with a stable URL, and select message text.
 
 Export a backup before updating. Replace files in the original loaded folder, reload the extension and refresh ChatGPT. Uninstalling clears local data.
+
+## User guide
+
+The following screenshots show real pages; some display an older version number and are provided for guidance only.
+
+1. After installation, click the extension in the browser toolbar and select “Agree and enable local annotations.”
+
+<p align="center"><img src="docs/assets/enable-annotations.png" alt="Enable local annotations" width="340"></p>
+
+2. Select text in a ChatGPT conversation to highlight or annotate it.
+
+<p align="center"><img src="docs/assets/highlight-selection.png" alt="Select text and annotate" width="850"></p>
+
+3. Click the floating button to browse highlights and annotations for the current conversation. Select “Conversation notes” to write Markdown notes with live rendering.
+
+<p align="center"><img src="docs/assets/conversation-panel.png" alt="Conversation annotation panel" width="850"></p>
+
+<details><summary>View the note library</summary>
+
+<p align="center"><img src="docs/assets/library.png" alt="Local note library" width="850"></p>
+
+</details>
 
 ## Privacy and limits
 
@@ -75,6 +90,15 @@ Package on Windows: `pwsh -File scripts/package.ps1`. Output: dist. See [build i
 | editor/ | ProseMirror Markdown editor |
 | tests/, scripts/ | Synthetic tests, checks, build and packaging |
 | docs/ | Format, publication rules and public assets |
+
+## Roadmap
+
+- Add web support for Gemini, DeepSeek, GLM, Kimi and Qwen.
+- Add WebDAV storage and cross-device synchronization for highlights and annotations.
+
+## Support the project
+
+<p align="center"><img src="docs/assets/wechat-support.jpg" alt="WeChat Pay support QR code" width="280"></p>
 
 ## Contribute and license
 
