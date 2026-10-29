@@ -96,10 +96,6 @@ Windows 패키징: `pwsh -File scripts/package.ps1`. 결과는 dist에 생성됩
 - Gemini, DeepSeek, GLM, Kimi, Qwen 웹 버전 지원을 추가할 계획입니다.
 - WebDAV를 통한 하이라이트와 주석 저장 및 기기 간 동기화 기능을 추가할 계획입니다.
 
-## 후원하기
-
-<p align="center"><img src="docs/assets/wechat-support.jpg" alt="WeChat Pay 후원 QR 코드" width="280"></p>
-
 ## 기여 및 라이선스
 
 기여 전에 [공개 및 개인정보 규칙](docs/PUBLISHING.md)을 읽어주세요. [Issues](https://github.com/HeCaoMin/AnnotateLLM/issues)에는 가상 예제만 사용하고 개인 대화, 백업 또는 인증 정보를 첨부하지 마세요.

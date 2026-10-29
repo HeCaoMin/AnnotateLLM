@@ -96,10 +96,6 @@ Package on Windows: `pwsh -File scripts/package.ps1`. Output: dist. See [build i
 - Add web support for Gemini, DeepSeek, GLM, Kimi and Qwen.
 - Add WebDAV storage and cross-device synchronization for highlights and annotations.
 
-## Support the project
-
-<p align="center"><img src="docs/assets/wechat-support.jpg" alt="WeChat Pay support QR code" width="280"></p>
-
 ## Contribute and license
 
 Read [publication and privacy rules](docs/PUBLISHING.md) before contributing. Use fictional examples in [Issues](https://github.com/HeCaoMin/AnnotateLLM/issues); never attach private chats, backups or credentials.
