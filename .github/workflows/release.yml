@@ -1,0 +1,38 @@
+name: Publish version
+on:
+  push:
+    branches: [main]
+    paths: [package.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-version
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check:publication
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - run: ./scripts/package.ps1
+        shell: pwsh
+      - name: Publish immutable version
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          $tag = "v$version"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) { Write-Host "$tag already exists; leaving it unchanged."; exit 0 }
+          gh release create $tag "dist/AnnotateLLM-chrome-$version.zip" "dist/AnnotateLLM-edge-$version.zip" dist/package-checksums.json --target $env:GITHUB_SHA --title $tag --notes-file CHANGELOG.md
+          if ($LASTEXITCODE -ne 0) { throw 'GitHub release failed' }

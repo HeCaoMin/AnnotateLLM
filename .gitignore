@@ -1,0 +1,68 @@
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+# Test output, browser state and personal data
+artifacts/
+test-results/
+playwright-report/
+blob-report/
+.test-profile*/
+*browser-profile*/
+*test-profile*/
+profiles/
+user-data/
+User Data/
+.local/
+private/
+secrets/
+exports/
+backups/
+*.sqlite*
+*.db
+*.har
+*.log
+*.zip
+*.crx
+*.7z
+*.bak
+# Credentials (examples must contain placeholders only)
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+.netrc
+.git-credentials
+credentials*.json
+*service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+# Local tooling and OS files
+.codex/
+.agents/
+.aws/
+.ssh/
+.vscode/
+.idea/
+.cache/
+.tmp/
+tmp/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+# Internal planning and historical evidence; retained locally
+/PRD.md
+/docs/PROGRESS.md
+/docs/REQUIREMENTS-13.md
+/docs/ADAPTER-RESEARCH.md
+/docs/VIDEO-PROMO-SCRIPT.md

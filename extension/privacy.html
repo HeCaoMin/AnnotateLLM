@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AnnotateLLM · 隐私说明</title><link rel="stylesheet" href="app.css"></head><body><main class="privacy">
+<p class="eyebrow">AnnotateLLM / PRIVACY</p><h1>数据留在你的浏览器。</h1><p>适用版本：0.0.1。更新日期：2026-10-29。</p>
+<h2>读取与保存什么</h2><p>启用后，插件在 chatgpt.com 的已保存对话页面读取对话标题、链接、消息文字及可用的消息标识，以提供选择批注和原文定位。只持久保存用户选择的摘录、短上下文、定位信息、高亮颜色、备注、对话笔记及必要修订信息，不保存完整聊天、附件或登录凭据。</p>
+<h2>保存在哪里</h2><p>笔记以一份 Markdown 总文档保存在当前浏览器配置文件的扩展存储中，同时保留一份恢复快照和必要设置。此版本无服务器、分析埋点、广告或自动同步，不向开发者或第三方发送笔记内容。Chrome 和 Microsoft Edge 及不同设备的本地数据互不共享。</p>
+<p>为在同一标签页刷新后恢复便利贴，网页 sessionStorage 仅保存已打开便利贴的对话 ID 与打开状态，不保存笔记或备注正文。未保存草稿暂留在扩展的页面内存中。</p>
+<h2>页面结构诊断</h2><p>识别失败时，可查看并主动下载 Markdown 诊断报告。报告仅包含结构计数、固定标记是否存在、祖先标签和布局属性，不包含聊天文字、标题、网址、消息 ID 值、笔记或账户信息。诊断暂存于页面内存，不写入笔记库、不自动上传；关闭或刷新页面后清除。</p>
+<h2>你的控制</h2><p>可暂停页面批注，在笔记库查看、编辑、删除记录，导出 Markdown 或导入备份。清空会从当前文档移除内容，恢复快照可能保留之前一次保存的数据，后续保存会轮换该快照。必要的删除标记只保存记录 ID、对话 ID 和删除时间，避免旧备份自动复活记录。卸载扩展会清除扩展本地数据；已导出的文件由你自行管理。</p>
+<h2>导出与安全边界</h2><p>导出文件可能包含多个对话的私人内容和链接，请选择合适的保存及分享位置。文档元数据校验用于检测损坏，不是数字签名或加密。浏览器本地存储和导出文件不提供本插件额外的密码加密。Markdown 不执行原始 HTML、脚本或自动加载远程图片；你主动点击外部链接后，由该网站的隐私政策适用。</p>
+<h2>权限与范围</h2><p>storage 用于本地数据及设置；站点权限和页面脚本仅声明 chatgpt.com，用于显示批注并核验页面内切换后的当前对话地址。首次使用需在插件入口同意并启用功能。不支持无痕模式、临时对话、分享页或 Claude。</p>
+<h2>用途限制与后续变化</h2><p>读取的信息仅用于用户可见的个人对话批注、保存和恢复功能，不用于广告、画像或出售。未来如果加入 WebDAV，同步服务和授权方式会单独披露并由你主动启用。</p>
+<p>支持与反馈请访问 GitHub 仓库 HeCaoMin/AnnotateLLM 的 Issues；请勿公开提交私人对话、备份或登录信息。</p><p><a href="https://github.com/HeCaoMin/AnnotateLLM/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a></p><a href="manager.html">返回笔记库</a>
+</main><script src="locales.js"></script><script src="privacy-locales.js"></script><script src="i18n.js"></script></body></html>

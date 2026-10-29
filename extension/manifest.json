@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "AnnotateLLM",
+  "version": "0.0.1",
+  "description": "为 ChatGPT 对话添加高亮、Markdown 备注和独立笔记。本地保存，支持 Markdown 导入导出。",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "AnnotateLLM",
+    "default_popup": "popup.html"
+  },
+  "options_page": "manager.html",
+  "incognito": "not_allowed",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "locales.js",
+        "privacy-locales.js",
+        "i18n.js",
+        "core.js",
+        "markdown.js",
+        "styles.js",
+        "ui.js",
+        "editor.bundle.js",
+        "editor-ui.js",
+        "adapter.js",
+        "content.js"
+      ],
+      "css": [
+        "highlights.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "keyboard-guard.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'none'"
+  }
+}
